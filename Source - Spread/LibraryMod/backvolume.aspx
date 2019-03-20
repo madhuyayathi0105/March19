@@ -166,6 +166,7 @@
                                 <asp:UpdatePanel ID="upadtepanelbutton1" runat="server">
                                     <ContentTemplate>
                                         <asp:ImageButton ID="Btngo" runat="server" ImageUrl="~/LibImages/Go.jpg" OnClick="btngo_Click" />
+                                         <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/LibImages/Go.jpg" OnClick="btngo_Click" />
                                         <asp:ImageButton ID="btnadd" runat="server" ImageUrl="~/LibImages/Add.jpg" OnClick="btnadd_Click" />
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
