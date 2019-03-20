@@ -1,0 +1,27 @@
+﻿body
+{
+}
+     .MultipleSelectionDDL 
+    {
+        border: solid 1px #000000;
+        overflow-y: scroll;
+        background-color: #f0f8ff;
+        font-size: 11px;
+        font-family: Calibri, Arial, Helvetica;
+        line-height:normal;
+       
+    }
+    .Dropdown_Txt_Box
+    {             
+       
+        border-color:Blue;
+        border-width:thin;
+        font-family:Book Antiqua;
+        font-size :medium;
+        background-image: url('drp1.png');       
+        background-repeat:no-repeat;
+        vertical-align: middle;
+        background-color  : white;
+        background-position:right;
+       
+    }

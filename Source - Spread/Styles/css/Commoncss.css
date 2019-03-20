@@ -1,0 +1,326 @@
+﻿.textbox
+{
+    border: 1px solid #c4c4c4;
+    text-transform: capitalize;
+    padding: 4px 4px 4px 4px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 0px 0px 8px #d9d9d9;
+    -moz-box-shadow: 0px 0px 8px #d9d9d9;
+    -webkit-box-shadow: 0px 0px 8px #d9d9d9;
+}
+.textbox1:hover
+{
+    outline: none;
+    border: 1px solid #7bc1f7;
+    box-shadow: 0px 0px 8px #7bc1f7;
+    -moz-box-shadow: 0px 0px 8px #7bc1f7;
+    -webkit-box-shadow: 0px 0px 8px #7bc1f7;
+}
+.btn
+{
+    width: 30px;
+    height: 30px;
+}
+.btn2
+{
+    width: 80px;
+    height: 30px;
+}
+.btn1
+{
+    width: 40px;
+    height: 30px;
+}
+.multxtpanel
+{
+    background: White;
+    border-color: Gray;
+    border-style: Solid;
+    border-width: 2px;
+    position: absolute;
+    box-shadow: 0px 0px 4px #999999;
+    border-radius: 5px;
+    overflow: auto;
+    width: auto;
+}
+.multxtpanleheight
+{
+    height: 200px;
+}
+.multxtpanleheight1
+{
+    height: 100px;
+}
+
+.autocomplete_highlightedListItem
+{
+    background-color: #EEEE89;
+    color: black;
+    padding: 1px;
+    width: 241px;
+}
+.autocomplete_completionListElement
+{
+    margin: 0px !important;
+    background-color: White;
+    color: windowtext;
+    border: buttonshadow;
+    border-style: solid;
+    cursor: 'default';
+    height: 100px;
+    text-align: left;
+    list-style-type: none;
+    padding-left: 1px;
+    width: 430px;
+    overflow: auto;
+    overflow-x: hidden;
+    border-color: #999999;
+    border-width: 1px;
+    position: absolute;
+    box-shadow: 0px 0px 4px #999999;
+    border-radius: 2px;
+}
+.txtheight
+{
+    height: 20px;
+    width: 80px;
+}
+.txtheight1
+{
+    height: 20px;
+    width: 100px;
+}
+.txtheight2
+{
+    height: 20px;
+    width: 120px;
+}
+.txtheight3
+{
+    height: 20px;
+    width: 135px;
+}
+.txtheight4
+{
+    height: 20px;
+    width: 160px;
+}
+.txtheight5
+{
+    height: 20px;
+    width: 250px;
+}
+.txtheight6
+{
+    height: 20px;
+    width: 350px;
+}
+.ddlheight
+{
+    height: 30px;
+    width: 80px;
+}
+.ddlheight1
+{
+    height: 30px;
+    width: 100px;
+}
+.ddlheight2
+{
+    height: 30px;
+    width: 120px;
+}
+.ddlheight3
+{
+    height: 30px;
+    width: 135px;
+}
+.ddlheight4
+{
+    height: 30px;
+    width: 160px;
+}
+.ddlheight5
+{
+    height: 30px;
+    width: 250px;
+}
+.ddlheight6
+{
+    height: 30px;
+    width: 350px;
+}
+.maindivstyle
+{
+    border: 1px solid #999999;
+    background-color: #F0F0F0;
+    box-shadow: 0px 0px 8px #999999; /*F0F0F0*/
+    -moz-box-shadow: 0px 0px 10px #999999;
+    -webkit-box-shadow: 0px 0px 10px #999999;
+    border: 3px solid #D9D9D9;
+    border-radius: 15px;
+}
+.subdivstyle
+{
+    border: 5px solid #0CA6CA;
+    border-top: 30px solid #0CA6CA;
+    border-radius: 10px;
+}
+.popupstyle
+{
+    z-index: 1000;
+    width: 100%;
+    background-color: rgba(54, 25, 25, .40);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.popupheight
+{
+    height: 50em;
+}
+.popupheight1
+{
+    height: 80em;
+}
+.maintablestyle
+{
+    border: 1px solid #0CA6CA;
+    border-radius: 10px;
+    background-color: #0CA6CA;
+    box-shadow: 0px 0px 8px #999999;
+}
+.panelbackground
+{
+    background: #DDEBF9;
+}
+.fontstylemedium
+{
+    font-family: Book Antiqua;
+    font-size: medium;
+    font-weight: bold;
+}
+.fontstylemedium1
+{
+    font-family: Book Antiqua;
+    font-size: medium;
+}
+.fontstylesmall
+{
+    font-family: Book Antiqua;
+    font-size: small;
+    font-weight: bold;
+}
+.fontstylesmall1
+{
+    font-family: Book Antiqua;
+    font-size: small;
+    font-weight: bold;
+}
+.fontstyleheader
+{
+    font-family: Book Antiqua;
+    font-size: x-large;
+    font-weight: bold;
+}
+.fontstyleheader
+{
+    font-family: Book Antiqua;
+    font-size: x-large;
+}
+.lnkstyle
+{
+    font-family: Book Antiqua;
+    font-size: small;
+    color: Blue;
+}
+.reportdivstyle
+{
+    overflow: auto;
+    border: 1px solid Gray;
+    background-color: White;
+    border-radius: 10px;
+}
+
+.type:hover
+{
+    cursor: pointer;
+}
+.cal_Theme1 .ajax__calendar_container
+{
+    background-color: #DEF1F4;
+    border: solid 1px #77D5F7;
+}
+
+.cal_Theme1 .ajax__calendar_header
+{
+    background-color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.cal_Theme1 .ajax__calendar_title, .cal_Theme1 .ajax__calendar_next, .cal_Theme1 .ajax__calendar_prev
+{
+    color: #004080;
+    padding-top: 3px;
+}
+
+.cal_Theme1 .ajax__calendar_body
+{
+    background-color: #ffffff;
+    border: solid 1px #77D5F7;
+}
+
+.cal_Theme1 .ajax__calendar_dayname
+{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 4px;
+    margin-top: 2px;
+    color: #004080;
+}
+
+.cal_Theme1 .ajax__calendar_day
+{
+    color: #004080;
+    text-align: center;
+}
+
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_day, .cal_Theme1 .ajax__calendar_hover .ajax__calendar_month, .cal_Theme1 .ajax__calendar_hover .ajax__calendar_year, .cal_Theme1 .ajax__calendar_active
+{
+    color: #004080;
+    font-weight: bold;
+    background-color: #DEF1F4;
+}
+
+.cal_Theme1 .ajax__calendar_today
+{
+    font-weight: bold;
+}
+
+.cal_Theme1 .ajax__calendar_other, .cal_Theme1 .ajax__calendar_hover .ajax__calendar_today, .cal_Theme1 .ajax__calendar_hover .ajax__calendar_title
+{
+    color: #bbbbbb;
+}
+
+/* For Spread color*/
+.spreadborder
+{
+    border: 2px solid #999999;
+    background-color: White;
+    box-shadow: 0px 0px 8px #999999; /*F0F0F0*/
+    border-radius: 10px;
+    overflow: auto;
+}
+/* For Table with white background*/
+.table
+{
+    background-color: white;
+    box-shadow: 0px 0px 8px #999999; /*F0F0F0*/
+    border-radius: 10px;
+}
+.container
+{
+    width: 100%;
+}

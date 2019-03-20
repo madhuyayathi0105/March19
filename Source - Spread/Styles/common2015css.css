@@ -1,0 +1,334 @@
+﻿
+
+.maincheck
+{
+    background-color: #F0F0F0;
+}
+
+body
+{
+    background-color: #f0f0f0;
+}
+
+.ins_pg_header
+        {
+            color: black;
+            font-family: monospace;
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        #tbl_datafilter
+        {
+              background-color: #ffffff;
+    border-bottom: 8px solid #06d995;
+    box-shadow: 0 13px 17px -8px;
+    color: Gray;
+    font-family: Trebuchet MS;
+    font-size: 16px;
+    height: auto;
+    padding: 11px;
+    text-decoration: none;
+        }
+        #tbl_datafilter td
+        {
+            padding: 6px 6px;
+        }
+        
+         .divheader
+        {
+              background-color: #ffffff;
+    border-bottom: 8px solid #06d995;
+    box-shadow: 0 13px 17px -8px;
+    color: Gray;
+    font-family: Trebuchet MS;
+    font-size: 16px;
+    height: auto;
+     width:100%;
+    text-decoration: none;   
+        }
+         .tabledesign
+        {
+              background-color: #ffffff;
+   
+    box-shadow: 0 13px 17px -8px;
+    color: Gray;
+    font-family: Trebuchet MS;
+    font-size: 16px;
+    height: auto;
+    padding: 11px;
+    text-decoration: none;   
+        }
+        .tabledesign td
+        {
+            padding: 6px 6px;
+        }
+        .btnrun
+        {
+            background-color: #06d995;
+            border: 0 none;
+            border-radius: 100px;
+          
+            color: White;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+                padding: 10px 11px;
+                text-decoration:none;
+                
+        }
+        
+        
+        
+        
+@-webkit-keyframes hvr-ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+
+@keyframes hvr-ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+
+.hvr-ripple-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+.hvr-ripple-out:before {
+  content: '';
+  position: absolute;
+  border: #06d995 solid 6px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+   padding: 10px 11px;
+   border-radius:100px;
+}
+.hvr-ripple-out:before, .hvr-ripple-out:focus:before, .hvr-ripple-out:active:before {
+  -webkit-animation-name: hvr-ripple-out;
+  animation-name: hvr-ripple-out;
+  animation-iteration-count: infinite;
+}
+        
+        #tbl_datafilter select
+        {
+            font-family: Trebuchet MS;
+            font-size: 16px;
+            text-decoration: none;
+            color: Black;
+        }
+        
+        .pnlstyle
+        {
+            background-color: White;
+            box-shadow: 9px -7px 35px -26px black;
+            height: auto;
+            width: auto;
+        }
+        
+        .ins2015lbl
+        {
+            font-family: Trebuchet MS;
+            font-size: 16px;
+            text-decoration: none;
+            color: White;
+            font-weight: bold;
+        }
+        
+        .ins2015lbl_black
+        {
+            font-family: Trebuchet MS;
+            font-size: 16px;
+            text-decoration: none;
+            color: Black;
+            font-weight: bold;
+        }
+        
+        .ins2015lbl_indigo
+        {
+            font-family: Trebuchet MS;
+            font-size: 16px;
+            text-decoration: none;
+            color: indigo;
+            font-weight: bold;
+        }
+        
+        .ins2015lbl_gray
+        {
+            font-family: Trebuchet MS;
+            font-size: 16px;
+            text-decoration: none;
+            color: Gray;
+            font-weight: bold;
+        }
+        
+        .ins2015lbl_l
+        {
+            font-family: Trebuchet MS;
+            font-size: 25px;
+            text-decoration: none;
+            color: White;
+            font-weight: bold;
+        }
+        
+        .ins2015lbl_black_l
+        {
+            font-family: Trebuchet MS;
+            font-size: 25px;
+            text-decoration: none;
+            color: Black;
+            font-weight: bold;
+        }
+        
+        .ins2015lbl_gray_l
+        {
+            font-family: Trebuchet MS;
+            font-size: 25px;
+            text-decoration: none;
+            color: Gray;
+            font-weight: bold;
+        }
+        
+        .btnexpexcel
+        {
+            background-color: #3399ff;
+            border: 0 none;
+            border-radius: 10px 84px 10px 88px;
+            box-shadow: 1px 9px 13px -10px black;
+            color: white;
+            font-family: trebuchet ms;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 25px;
+            cursor: pointer;
+        }
+       
+       .btnupdate
+        {
+            background-color:yellowgreen;
+            border: 0 none;
+            border-radius: 10px 84px 10px 88px;
+            box-shadow: 1px 9px 13px -10px black;
+            color: white;
+            font-family: trebuchet ms;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 25px;
+            cursor: pointer;
+        }
+        
+        .btndelete
+        {
+            background-color:red;
+            border: 0 none;
+            border-radius: 10px 84px 10px 88px;
+            box-shadow: 1px 9px 13px -10px black;
+            color: white;
+            font-family: trebuchet ms;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 25px;
+            cursor: pointer;
+        }
+        
+        .btnbrowse
+        {
+            border: 12px solid white;
+    color: tomato;
+    font-family: Trebuchet MS;
+    font-size: medium;
+    font-weight: bold;
+        }
+        
+        .btnimport
+        {
+             background-color: white;
+    border: 7px solid #8e82ad;
+    color: palevioletred;
+    font-family: Trebuchet MS;
+    font-size: medium;
+    font-weight: bold;
+    padding: 8px 9px;
+        }
+       
+        
+        .txtexecel
+        {
+             -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: transparent;
+    border-color: -moz-use-text-color -moz-use-text-color #06d995;
+    border-image: none;
+    border-style: none none solid;
+    border-width: 0 0 2px;
+    font-family: trebuchet ms;
+    font-size: medium;
+    font-weight: bold;
+    height: 35px;
+    text-align:center;
+   
+    width: 210px;
+        }
+        
+       
+        .delelepnl_no
+        {
+             background-color: green;
+    border: 0 none;
+    color: white;
+    font-family: Trebuchet MS;
+    font-size: medium;
+    font-weight: bold;
+    padding: 6px;
+        }
+        
+         .delelepnl_yes
+        {
+           
+            background-color: red;
+    border: 0 none;
+    color: white;
+    font-family: Trebuchet MS;
+    font-size: medium;
+    font-weight: bold;
+    padding: 6px;
+        }
+       
+       .delelepnl_conf
+       {
+            color: brown;
+    font-family: Trebuchet MS;
+    font-size: 36px;
+    font-weight: bold;
+       }
+       
+        
+         .mainmenuimgsize
+        {
+            height: 70px;   
+                 
+        }

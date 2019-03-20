@@ -1,0 +1,528 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="2015Menu/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="2015Menu/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="2015Menu/css/component.css" />
+    <link href="~/Styles/common2015css.css" rel="stylesheet" type="text/css" />
+    <script src="2015Menu/js/modernizr.custom.js"></script>
+    <style type="text/css">
+        .style1
+        {
+            top: 105px;
+        }
+        .f1lbl
+        {
+            color: #ffffff;
+            font-family: Trebuchet MS;
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .menuheadercss
+        {
+            background-color: lightyellow;
+            font-size: 21px;
+        }
+    </style>
+    <script src="Scripts/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="Scripts/AjaxJScript.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            $("#menushow").click(function () {
+                $("#closemenu").toggle('fast');
+            });
+            $("#closemenu").click(function () {
+                $("#closemenu").hide('fast');
+            });
+            $("#allmenu").click(function () {
+                $("#closemenu").show('fast');
+            });
+            $("#divimg_stfphoto").click(function () {
+                $("#showstaffinfo").toggle('fast');
+            });
+            $("#showstaffinfo").click(function () {
+                $("#showstaffinfo").hide('fast');
+            });
+            $("#colorpickerdiv_main").click(function () {
+                $("#colorpickerdiv").toggle('fast');
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        function Color_Changed(sender) {
+            sender.get_element().value = "#" + sender.get_selectedColor();
+        }
+    </script>
+    <style>
+        body
+        {
+            font-family: Trebuchet MS;
+        }
+        #menutable tr td
+        {
+            height: 100px;
+            margin: 10px;
+            border: 1px dotted transparent;
+            text-align: center;
+        }
+        #menutable tr td a
+        {
+            text-decoration: none;
+            color: Gray;
+        }
+        #menutable tr td a:hover
+        {
+            text-decoration: underline;
+            color: Gray;
+        }
+        #menutable tr td:hover
+        {
+            border: 1px solid #f0f0f0;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="page" oncontextmenu="return false">
+    <form id="form1" runat="server">
+    <div>
+        <div class="container" style="height: 100%; width: 100%; top: 0px; left: 0px; position: relative;">
+            <div class="mp-pusher" id="mp-pusher">
+                <nav id="mp-menu" class="mp-menu">
+					<div class="mp-level">	
+					</div>
+				</nav>
+                <div class="scroller">
+                    <div class="scroller-inner">
+                        <div class="content clearfix">
+                            <div class="clearfix">
+                                <img src="dashbd/menu.png" id="menushow" style="cursor: pointer; left: 94px; position: fixed;
+                                    z-index: 1000; top: 19px;" />
+                                <div>
+                                    <div id="MainDivIdValue" runat="server">
+                                        <asp:Label ID="lblcolname" Style="color: lightyellow; left: 147px; position: relative;
+                                            top: 15px;" CssClass="ins2015lbl_l" runat="server"> </asp:Label>
+                                        <div style="position: fixed; right: 32px; top: 12px;">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <%--color picker--%>
+                                                        <div id="colorpickerdiv_main" style="position: relative; border-radius: 100px; height: 40px;
+                                                            width: 50px;">
+                                                            <asp:Image ID="colorpickerdivmain" runat="server" AlternateText=" " Style="border-radius: 100px;
+                                                                height: 40px; width: 40px;" ImageUrl="~/LogInImage/colorpicker.png" />
+                                                            &nbsp;&nbsp
+                                                        </div>
+                                                        <div id="colorpickerdiv" style="background-color: white; border-left: 3px solid mediumslateblue;
+                                                            border-radius: 20px 82px 345px; border-right: 73px solid mediumslateblue; box-shadow: 0 0 10px -4px;
+                                                            height: 209px; position: absolute; right: 123px; width: 182px; display: none;">
+                                                            <asp:ScriptManager ID="ScriptManager1" runat="server">
+                                                            </asp:ScriptManager>
+                                                            <center>
+                                                                <br />
+                                                                <div id="prewcolor" style="width: 66px; height: 66px; border: 1px solid #000; margin: 0 3px;
+                                                                    border-radius: 51px;">
+                                                                </div>
+                                                                <br />
+                                                                <asp:TextBox ID="txt_colorpicker" runat="server" Style="border-radius: 51px;"></asp:TextBox></center>
+                                                            <asp:ColorPickerExtender ID="txtCardColor_ColorPickerExtender" TargetControlID="txt_colorpicker"
+                                                                runat="server" PopupPosition="BottomLeft" SampleControlID="prewcolor" OnClientColorSelectionChanged="Color_Changed">
+                                                            </asp:ColorPickerExtender>
+                                                            <br />
+                                                            <center>
+                                                                <asp:Button ID="btn_color" Text="Save" ForeColor="mediumslateblue" runat="server"
+                                                                    Style="border-radius: 20px;" OnClick="btn_color_click" />
+                                                            </center>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span id="CountSpan" runat="server" visible="false" style="color: Red; position: absolute;
+                                                            margin-top: 0px; margin-left: 11px; font-weight: bold;"></span>
+                                                        <asp:ImageButton ID="ImageButton2" PostBackUrl="~/smsmod/smsreport.aspx" runat="server"
+                                                            CssClass="f1lnk" ImageUrl="~/dashbd/notif.png" />
+                                                        &nbsp;&nbsp
+                                                        <asp:ImageButton ID="ImageButton26" runat="server" ImageUrl="~/dashbd/back.png" PostBackUrl="~/Default_LoginPage.aspx"
+                                                            Visible="true" />
+                                                        &nbsp;&nbsp
+                                                        <asp:ImageButton ID="ImageButton25" runat="server" ImageUrl="~/dashbd/logout.png"
+                                                            OnClick="lb2_Click" />
+                                                    </td>
+                                                    <td>
+                                                        <div id="divimg_stfphoto" style="position: relative; border-radius: 100px; height: 40px;
+                                                            width: 40px; background-color: lightyellow">
+                                                            <asp:Image ID="img_stfphoto" runat="server" AlternateText=" " Style="border-radius: 100px;
+                                                                height: 40px; width: 40px;" />
+                                                        </div>
+                                                        <div id="showstaffinfo" style="background-color: white; border-left: 3px solid mediumslateblue;
+                                                            border-radius: 0 0 345px; border-right: 115px solid mediumslateblue; box-shadow: 0 0 10px -4px;
+                                                            height: 309px; position: absolute; right: 22px; width: 291px; display: none;">
+                                                            <center>
+                                                                <asp:ImageButton ID="ImageButton1" runat="server" Style="left: 200px; position: relative;
+                                                                    top: 22px;" CssClass="f1lnk" ImageUrl="~/dashbd/logout.png" OnClick="lb2_Click" />
+                                                                <asp:ImageButton ID="LinkButton1" runat="server" ImageUrl="~/dashbd/back.png" Style="left: 164px;
+                                                                    transform: rotate(15deg); position: relative; top: 61px;" PostBackUrl="~/Default_LoginPage.aspx"
+                                                                    Visible="true" />
+                                                                <asp:ImageButton ID="ImageButton27" runat="server" ImageUrl="~/dashbd/chn.png" Width="30px"
+                                                                    Height="30px" Style="left: 125px; transform: rotate(15deg); position: relative;
+                                                                    top: 100px;" PostBackUrl="~/changepassword.aspx" Visible="true" />
+                                                                <div style="position: relative; border-radius: 100px; top: 10px; height: 120px; width: 120px;
+                                                                    background-color: lightyellow">
+                                                                    <asp:Image ID="imgstdphoto" runat="server" AlternateText=" " Style="border-radius: 100px;
+                                                                        height: 120px; width: 120px;" />
+                                                                </div>
+                                                                <br />
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <center>
+                                                                                <asp:Label ID="lbslstaffname" runat="server" CssClass="ins2015lbl_indigo"></asp:Label>
+                                                                                <br />
+                                                                                <asp:Label ID="lbldesignation" runat="server" CssClass="ins2015lbl_indigo"></asp:Label>
+                                                                                <br />
+                                                                                <asp:Label ID="lbldept" runat="server" CssClass="ins2015lbl_indigo"></asp:Label>
+                                                                            </center>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </center>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <br />
+                                        </div>
+                                    </div>
+                                    <div id="closemenu" runat="server" style="background-color: transparent; height: 100%;
+                                        left: 0; display: none; position: fixed; top: 0; width: 100%;">
+                                        <div id="allmenu" runat="server" style="background-color:White; box-shadow: 0 0 14px -7px;
+                                            height: auto; z-index: 1000; left: 123px; position: fixed; top: 50px; width: 745px;;">
+                                            <div style="background-color: White; box-shadow: -4px -2px 14px -7px; height: 25px;
+                                                left: 93px; position: fixed; top: 56px; transform: rotate(46deg); width: 25px;
+                                                z-index: 1000;">
+                                            </div>
+                                            <center>
+                                                <div id="menutable" style="width: 853px; margin-top: 25px;">
+
+
+                                                    <div id="AdmissionDiv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton28" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/AdmissionImage.png"
+                                                                OnClick="Admission_Click" />
+                                                            <%--<img src="image/Student.png" id="Img6" />--%>
+                                                            <br />
+                                                            Admission</a>
+                                                    </div>
+                                                    <div id="Studentdiv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton11" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/Student.png"
+                                                                OnClick="Student_Click" />
+                                                            <%--<img src="image/Student.png" id="Img6" />--%>
+                                                            <br />
+                                                            Student</a>
+                                                    </div>
+                                                    <div id="AttednanceDiv" runat="server" style="display: none; height: 120px; width: 120px;">
+                                                        <a id="A1" href="#" runat="server" style="text-decoration: none;">
+                                                            <%--<img src="image/attence new.png" id="Img1" />--%>
+                                                            <asp:ImageButton ID="ImageButton5" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/attence new.png"
+                                                                OnClick="att_Click" />
+                                                            <br />
+                                                            Attendance</a>
+                                                    </div>
+                                                    <div id="Camdiv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="Internal.aspx" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton3" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/cam.png"
+                                                                OnClick="cam_Click" />
+                                                            <br />
+                                                            Mark</a>
+                                                    </div>
+                                                    <div id="Schedulediv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton6" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/sche.png"
+                                                                OnClick="Schedule_Click" />
+                                                            <%--<img src="image/sche.png" id="Img3" />--%>
+                                                            <br />
+                                                            Schedule</a>
+                                                    </div>
+                                                    <div id="BlackBoxdiv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton12" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/Blackbox.png"
+                                                                OnClick="Blackbox_Click" />
+                                                            <%--<img src="image/Blackbox.png" id="Img7" />--%>
+                                                            <br />
+                                                            Black Box</a>
+                                                    </div>
+                                                    <div id="Questiondiv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton16" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/Question.png"
+                                                                OnClick="Question_Click" />
+                                                            <%--<img src="image/Question.png" id="Img11" />--%>
+                                                            <br />
+                                                            Question</a>
+                                                    </div>
+                                                    <div id="SMSdiv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton13" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/SMS.png"
+                                                                OnClick="SMS_Click" />
+                                                            <%--<img src="image/SMS.png" id="Img8" />--%>
+                                                            <br />
+                                                            SMS</a>
+                                                    </div>
+                                                    <div id="Chartdiv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="Internal.aspx" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton19" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/chart.png"
+                                                                OnClick="chart_Click" />
+                                                            <%--<img src="image/chart.png" id="Img16" />--%><br />
+                                                            Chart</a>
+                                                    </div>
+                                                    <div id="Requestdiv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton21" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/Request.png"
+                                                                OnClick="Requestdiv_Click" />
+                                                            <%--<img src="image/HR-1.png" id="Img14" />--%>
+                                                            <br />
+                                                            Request</a>
+                                                    </div>
+                                                    <div id="Feedbackdiv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton4" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/Feedback.png"
+                                                                OnClick="Feedbackdiv_Click" />
+                                                            <%--<img src="image/finance.png" id="Img13" />--%>
+                                                            <br />
+                                                            Feedback</a>
+                                                    </div>
+                                                    <div id="Financediv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton7" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/finance.png"
+                                                                OnClick="finance_Click" />
+                                                            <%--<img src="image/finance.png" id="Img13" />--%>
+                                                            <br />
+                                                            Finance</a>
+                                                    </div>
+                                                    <div id="HRdiv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton8" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/HR-1.png"
+                                                                OnClick="hr_Click" />
+                                                            <%--<img src="image/HR-1.png" id="Img14" />--%>
+                                                            <br />
+                                                            HR</a>
+                                                    </div>
+                                                    <div id="Reportsdiv" runat="server" visible="false" style="display: none; float: left;
+                                                        height: 120px; width: 120px;">
+                                                        <a href="Internal.aspx" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton9" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/reports.png"
+                                                                OnClick="Reports_Click" />
+                                                            <%--<img src="image/reports.png" id="Img4" />--%><br />
+                                                            Library</a>
+                                                    </div>
+                                                    <div id="Inventorydiv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton17" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/Inventory.png"
+                                                                OnClick="Inventory_Click" />
+                                                            <%--<img src="image/Inventory.png" id="Img12" />--%>
+                                                            <br />
+                                                            Inventory </a>
+                                                    </div>
+                                                    <div id="Hosteldiv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton18" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/Hostel.png"
+                                                                OnClick="Hostel_Click" />
+                                                            <%--<img src="image/Hostel.png" id="Img15" />--%>
+                                                            <br />
+                                                            Hostel</a>
+                                                    </div>
+                                                    <div id="Officediv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton22" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/Office.png"
+                                                                OnClick="Officediv_Click" />
+                                                            <%--<img src="image/Student.png" id="Img6" />--%>
+                                                            <br />
+                                                            Office</a>
+                                                    </div>
+                                                    <div id="Transportdiv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton23" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/Transport.png"
+                                                                OnClick="Transport_Click" />
+                                                            <%--<img src="image/Inventory.png" id="Img12" />--%>
+                                                            <br />
+                                                            Transport </a>
+                                                    </div>
+                                                    <div id="COEdiv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton10" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/COE-1.png"
+                                                                OnClick="coe_Click" />
+                                                            <%--<img src="image/COE-1.png" id="Img5" />--%>
+                                                            <br />
+                                                            COE</a>
+                                                    </div>
+                                                    <div id="Allotmentdiv" runat="server" visible="false" style="display: none; float: left;
+                                                        height: 120px; width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton14" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/Allotment.png"
+                                                                OnClick="Allotment_Click" />
+                                                            <%--<img src="image/Allotment.png" id="Img10" />--%>
+                                                            <br />
+                                                            Allotment</a>
+                                                    </div>
+                                                    <div id="Schooldiv" runat="server" visible="false" style="display: none; float: left;
+                                                        height: 120px; width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton20" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/school.png"
+                                                                OnClick="school_Click" />
+                                                            <%--<img src="image/school.png" id="Img17" />--%>
+                                                            <br />
+                                                            School</a>
+                                                    </div>
+                                                    <%--<div id="librarydiv" runat="server" style="display: none; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton15" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/library1.png"
+                                                                Enabled="false" OnClick="library_Click" />
+                                                            <br />
+                                                            Library</a>
+                                                    </div>--%>
+                                                    <div id="ipatchdiv" runat="server" style="display: block; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton24" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/ipatch.png"
+                                                                OnClick="ipatch_Click" />
+                                                            <br />
+                                                            I Patch</a>
+                                                    </div>
+                                                     <div id="backupdiv" runat="server" style="display: block; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton29" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/backup.png"
+                                                                OnClick="backup_Click" />
+                                                            <br />
+                                                             Backup</a> <%--poomalar 10.11.17--%>
+                                                    </div>
+                                                     <div id="librarydiv" runat="server" style="display: block; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton15" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/library1.png"
+                                                                OnClick="library_Click" />
+                                                            <br />
+                                                            Library</a>
+                                                    </div>
+
+                                                    
+                                                <div id="divMasterWizard" runat="server" style="display: block; float: left; height: 120px;
+                                                        width: 120px;">
+                                                        <a href="#" style="text-decoration: none;">
+                                                            <asp:ImageButton ID="ImageButton31" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/MasterWizard.png"
+                                                                OnClick="MasterWizard_Click" />
+                                                            <%--<img src="image/Student.png" id="Img6" />--%>
+                                                            <br />
+                                                            Master Wizard</a>
+                                                    </div>
+                                                </div>
+                                                <div style="background-color: lightseagreen; border-radius: 13px 102px; height: 35px;
+                                                    position: relative; right: 31px; display: none;">
+                                                    <center>
+                                                        <a href="#" style="color: White; text-decoration: none;">More</a></center>
+                                                </div>
+                                            </center>
+                                        </div>
+                                        <div id="Div1" runat="server" visible="false" style="background-color: White; box-shadow: 0 0 14px -7px;
+                                            height: 200px; z-index: 1000; left: 76px; overflow: auto; position: fixed; top: 64px;
+                                            width: 200px;">
+                                            <div style="background-color: White; box-shadow: -4px -2px 14px -7px; height: 25px;
+                                                left: 93px; position: fixed; top: 56px; transform: rotate(46deg); width: 25px;
+                                                z-index: 1000;">
+                                            </div>
+                                            <center>
+                                                <br />
+                                                <br />
+                                                <table id="scruritytable" style="width: 200px; text-align: center;">
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">
+                                                                <asp:ImageButton ID="ImageButton38" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/Security.png"
+                                                                    OnClick="Security_Click" />
+                                                                <%--<img src="image/Security.png" id="Img18" />--%>
+                                                                <br />
+                                                                Security</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <div style="background-color: lightseagreen; border-radius: 13px 102px; height: 35px;
+                                                    position: relative; right: 31px; display: none;">
+                                                    <center>
+                                                        <a href="#" style="color: White; text-decoration: none;">More</a></center>
+                                                </div>
+                                            </center>
+                                        </div>
+                                         <div id="Div2" runat="server" visible="false" style="background-color: White; box-shadow: 0 0 14px -7px;
+                                            height: 200px; z-index: 1000; left: 300px; overflow: auto; position: fixed; top: 64px;
+                                            width: 200px;">
+                                            <div style="background-color: White; box-shadow: -4px -2px 14px -7px; height: 25px;
+                                                left: 93px; position: fixed; top: 56px; transform: rotate(46deg); width: 25px;
+                                                z-index: 1000;">
+                                            </div>
+                                            <center>
+                                                <br />
+                                                <br />
+                                                <table id="Table1" style="width: 200px; text-align: center;">
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">
+                                                                <asp:ImageButton ID="ImageButton30" runat="server" CssClass="mainmenuimgsize" ImageUrl="~/LogInImage/Security.png"
+                                                                    OnClick="Security2_Click" />
+                                                                <%--<img src="image/Security.png" id="Img18" />--%>
+                                                                <br />
+                                                                New Security</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <div style="background-color: lightseagreen; border-radius: 13px 102px; height: 35px;
+                                                    position: relative; right: 31px; display: none;">
+                                                    <center>
+                                                        <a href="#" style="color: White; text-decoration: none;">More</a></center>
+                                                </div>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="2015Menu/js/classie.js"></script>
+            <script src="2015Menu/js/mlpushmenu.js"></script>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,1685 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FarPoint.Web.Spread.Extender</name>
+    </assembly>
+    <members>
+        <member name="T:FarPoint.Web.Spread.Extender.ExtenderContainer">
+            <summary>
+            Internal Use Only. container of editor control and extenders
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.ExtenderContainer.Editor">
+            <summary>
+            Gets or sets the editor control.
+            </summary>
+            <value>Editor</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.ExtenderContainer.Extenders">
+            <summary>
+            Gets the extenders targeting the editor.
+            </summary>
+            <value>Extenders</value>
+        </member>
+        <member name="T:FarPoint.Web.Spread.Extender.ExtenderContainerExtender">
+            <summary>
+            Internal Use Only. The extender of container which contains editor control and extenders
+            </summary>
+        </member>
+        <member name="T:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1">
+            <summary>
+            Represents the basis for other ASP.NET AJAX extender cell types.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.EnsureEditorTypeValid(System.Type,System.Object)">
+            <summary>
+            Ensures that the editor type is valid.
+            </summary>
+            <param name="t">Type</param>
+            <param name="value">Object</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.GetEditorControl(System.String,System.Web.UI.WebControls.TableCell,FarPoint.Web.Spread.Appearance,FarPoint.Web.Spread.Inset,System.Object,System.Boolean)">
+            <summary>
+            Gets the control used to edit the cell.
+            </summary>
+            <param name="id">Unique identifier of the control</param>
+            <param name="parent">Parent cell (TableCell object) of the control</param>
+            <param name="style">Style settings (Appearance object) for the control</param>
+            <param name="margin">Margin settings (Inset object) for the control</param>
+            <param name="value">Value (as object) to put in the control</param>
+            <param name="upperLevel">Whether the control can render in an up-level browser</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.PaintCell(System.String,System.Web.UI.WebControls.TableCell,FarPoint.Web.Spread.Appearance,FarPoint.Web.Spread.Inset,System.Object,System.Boolean)">
+            <summary>
+            Gets a control and renders it in the cell based on the specified appearance, margin, and value.
+            </summary>
+            <param name="id">Unique identifier of the control</param>
+            <param name="parent">Parent cell (TableCell object) for the control</param>
+            <param name="style">Style settings (Appearance object) for the control</param>
+            <param name="margin">Margin settings (Inset object) for the control</param>
+            <param name="value">Value (as object) to put in the control</param>
+            <param name="upperLevel">Whether to render to a up-level browser</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.Clone">
+            <summary>
+            Creates a new copy of the cell type.
+            </summary>
+            <returns>New copy of the cell type</returns>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.GetEditorValue(System.Web.UI.Control,System.String)">
+            <summary>
+            Gets the value from the editing control used for the cell.
+            </summary>
+            <param name="owner">Spread component that owns this editing control</param>
+            <param name="id">Unique identifier used by the Spread component to identify this editing control</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.GetSpread(System.Web.UI.Control)">
+            <summary>
+            Gets the Spread component.
+            </summary>
+            <param name="c">Spread component</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.Serialize(System.Xml.XmlTextWriter)">
+            <summary>
+            Saves the object to XML. 
+            </summary>
+            <param name="w">XmlTextWriter object used to save the object</param>
+            <returns>true if successful; false otherwise</returns>
+            <remarks>
+            1. SerializeConverters
+            2. SerializeEditor
+            3. SerializeExtenders
+            </remarks>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.Deserialize(System.Xml.XmlNodeReader)">
+            <summary>
+            Loads the object from XML.
+            </summary>
+            <param name="r">XmlNodeReader from which to read the object</param>
+            <returns>true if successful; false otherwise</returns>
+            <remarks>
+            1. DeserializeConverters
+            2. DeserializeEditor
+            3. DeserializeExtenders
+            </remarks>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.SerializeConverters(System.Xml.XmlTextWriter)">
+            <summary>
+            Saves the Converters to XML.
+            </summary>
+            <param name="w">XmlTextWriter object used to save the object</param>
+            <returns>true if successful; false otherwise</returns>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.DeserializeConverters(System.Xml.XmlNodeReader)">
+            <summary>
+            Loads the Converters from XML.
+            </summary>
+            <param name="r">XmlNodeReader from which to read the object</param>
+            <returns>true if successful; false otherwise</returns>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.SerializeEditor(System.Xml.XmlTextWriter)">
+            <summary>
+            Saves the Editor to XML.
+            </summary>
+            <param name="w">XmlTextWriter object used to save the object</param>
+            <returns>true if successful; false otherwise</returns>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.DeserializeEditor(System.Xml.XmlNodeReader)">
+            <summary>
+            Loads the Editor from XML.
+            </summary>
+            <param name="r">XmlNodeReader from which to read the object</param>
+            <returns>true if successful; false otherwise</returns>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.SerializeExtenders(System.Xml.XmlTextWriter)">
+            <summary>
+            Saves the Extenders to XML.
+            </summary>
+            <param name="w">XmlTextWriter object used to save the object</param>
+            <returns>true if successful; false otherwise</returns>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.DeserializeExtenders(System.Xml.XmlNodeReader)">
+            <summary>
+            Loads the Extenders from XML.
+            </summary>
+            <param name="r">XmlNodeReader from which to read the object</param>
+            <returns>true if successful; false otherwise</returns>
+        </member>
+        <member name="F:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.cssClass">
+            >>> Bug 99901105 by Lucky 
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.FarPoint#Web#Spread#Renderer#IRenderer2#RendererClientScriptUrl2(FarPoint.Web.Spread.FpSpread)" -->
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.MaskedEditValidator">
+            <summary>
+            Gets or sets the MaskedEditValidator.
+            </summary>
+            <value>An instance of MaskedEditValidator</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.ShowEditor">
+            <summary>
+            Gets or sets whether to display the editor.
+            </summary>
+            <value>true if editor is displayed; otherwise, false.</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.Editor">
+            <summary>
+            Gets or sets the editing control.
+            </summary>
+            <value>Editing control</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.Extenders">
+            <summary>
+            Gets the extenders that target the editing control.
+            </summary>
+            <value>Extenders</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.Converters">
+            <summary>
+            Gets the JSON converters to serialize the editing control.
+            </summary>
+            <value>Converters</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxCellTypeBase`1.CssClass">
+            <summary>
+            Gets or sets the CSS class name.
+            </summary>
+        </member>
+        <member name="T:FarPoint.Web.Spread.Extender.ExtenderCellType">
+            <summary>
+            Represents the basis for other ASP.NET AJAX extender cell types 
+            using a text box as the editing control.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.ExtenderCellType.GetEditorControl(System.String,System.Web.UI.WebControls.TableCell,FarPoint.Web.Spread.Appearance,FarPoint.Web.Spread.Inset,System.Object,System.Boolean)">
+            <summary>
+            Gets the control used to edit the cell.
+            </summary>
+            <param name="id">Unique identifier of the control</param>
+            <param name="parent">Parent cell (TableCell object) of the control</param>
+            <param name="style">Style settings (Appearance object) for the control</param>
+            <param name="margin">Margin settings (Inset object) for the control</param>
+            <param name="value">Value (as object) to put in the control</param>
+            <param name="upperLevel">Whether the control can render in an up-level browser</param>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.ExtenderCellType.Editor">
+            <summary>
+            Gets or sets the text box editing control.
+            </summary>
+            <value>Text box editing control</value>
+        </member>
+        <member name="T:FarPoint.Web.Spread.Extender.AutoCompleteCellType">
+            <summary>
+            Represents an ASP.NET AJAX extender automatic completion cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AutoCompleteCellType.#ctor">
+            <summary>
+            Creates a new ASP.NET AJAX extender automatic completion cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.MinimumPrefixLength">
+            <summary>
+            Gets or sets the minimum length of text before the Web service provides 
+            suggestions for completion.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.CompletionInterval">
+            <summary>
+            Gets or sets the time, in milliseconds, before the timer kicks in 
+            to provide suggestions for completion using the Web service. 
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.CompletionSetCount">
+            <summary>
+            Gets or sets the number of suggestions for completion.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.ServiceMethod">
+            <summary>
+            Gets or sets the Web service method that provides the automatic completion.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.ServicePath">
+            <summary>
+            Gets or sets the path to the Web service that provides the automatic completion.
+            </summary>
+            <remarks>
+            This property determines the path to the Web service from which the extender  
+            pulls the word or sentence completions. If this is not provided, the 
+            service method should be a page method. 
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.ContextKey">
+            <summary>
+            Gets or sets the user- or page-specific context key for an optional 
+            overload of the Web method described by the ServiceMethod and ServicePath.
+            </summary>
+            <remarks>
+            This property determines the user/page specific context provided 
+            to an optional overload of the Web method described by the Service Method 
+            and ServicePath. If the context key is used, it should have the same signature 
+            with an additional parameter named contextKey of type string.
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.UseContextKey">
+            <summary>
+            Gets or sets whether the context key should be used.
+            </summary>
+            <remarks>
+            This property determines whether the ContextKey property should be used.  
+            This is automatically enabled if the ContextKey property is ever set
+            (on either the client or the server). If the context key is used, it 
+            should have the same signature with an additional parameter 
+            named contextKey of type string.
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.CompletionListCssClass">
+            <summary>
+            Gets or sets the CSS class used to style the completion list flyout.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.CompletionListItemCssClass">
+            <summary>
+            Gets or sets the CSS class used to style an item in the completion list flyout.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.CompletionListHighlightedItemCssClass">
+            <summary>
+            Gets or sets the CSS class used to style a highlighted item in the completion list flyout.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.EnableCaching">
+            <summary>
+            Gets or sets whether client-side caching is enabled for automatic completion.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.DelimiterCharacters">
+            <summary>
+            Gets or sets the character(s) used to separate words for automatic completion.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.FirstRowSelected">
+            <summary>
+            Gets or sets whether the first row of the automatic completion list is selected by default.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.OnShow">
+            <summary>
+            Gets or sets whether to show animation.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.OnHide">
+            <summary>
+            Gets or sets whether to hide animation.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.OnClientPopulating">
+            <summary>
+            Handles the client-side populating event.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.OnClientPopulated">
+            <summary>
+            Handles the client-side populated event.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.OnClientShowing">
+            <summary>
+            Handles the client-side showing event.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.OnClientShown">
+            <summary>
+            Handles the client-side shown event.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.OnClientHiding">
+            <summary>
+            Handles the client-side hiding event
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.OnClientHidden">
+            <summary>
+            Handles the client-side hidden event
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.OnClientItemSelected">
+            <summary>
+            Handles the client-side itemSelected event.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.OnClientItemOver">
+            <summary>
+            Handles the client-side itemOver event.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AutoCompleteCellType.OnClientItemOut">
+            <summary>
+            Handles the client-side itemOut event.
+            </summary>
+        </member>
+        <member name="T:FarPoint.Web.Spread.Extender.DateCalendarCellType">
+            <summary>
+            Represents an ASP.NET AJAX extender date calendar cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.DateCalendarCellType.#ctor">
+            <summary>
+            Creates a new ASP.NET AJAX extender date calendar cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.DateCalendarCellType.GetEditorControl(System.String,System.Web.UI.WebControls.TableCell,FarPoint.Web.Spread.Appearance,FarPoint.Web.Spread.Inset,System.Object,System.Boolean)">
+            <summary>
+            Gets the control used to edit the cell.
+            </summary>
+            <param name="id">Unique identifier of the control</param>
+            <param name="parent">Parent cell (TableCell object) of the control</param>
+            <param name="style">Style settings (Appearance object) for the control</param>
+            <param name="margin">Margin settings (Inset object) for the control</param>
+            <param name="value">Value (as object) to put in the control</param>
+            <param name="upperLevel">Whether the control can render in an up-level browser</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.DateCalendarCellType.ValidateEditorValue(System.Object)">
+            <summary>
+            Validates the given value.
+            </summary>
+            <param name="value">Value to be validated</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.DateCalendarCellType.Parse(System.String)">
+            <summary>
+            When deriving a cell type based on this type, override this
+            to change what gets parsed from the cell on the sheet and put in the data model.
+            </summary>
+            <param name="s">String from the cell on the sheet to parse</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.DateCalendarCellType.Format(System.Object)">
+            <summary>
+            When deriving a cell type based on this type, override this
+            to change what gets passed back and formatted as a string
+            into the cell on the sheet from the object in the data model.
+            </summary>
+            <param name="o">Object in the data model from which to get formatting information</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.DateCalendarCellType.SerializeEditor(System.Xml.XmlTextWriter)">
+            <summary>
+            Saves the editor to XML.
+            </summary>
+            <param name="w">XmlTextWriter object used to save the object</param>
+            <returns>true if successful; false otherwise</returns>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.DateCalendarCellType.DeserializeEditor(System.Xml.XmlNodeReader)">
+            <summary>
+            Loads the editor from XML.
+            </summary>
+            <param name="r">XmlNodeReader from which to read the object</param>
+            <returns>true if successful; false otherwise</returns>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.DateCalendarCellType.ShowPopupButton">
+            <summary>
+            Gets or sets a value indicating whether show Popupbutton.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.DateCalendarCellType.ShowButton">
+            <summary>
+            Gets or sets a value indicating whether show Popupbutton.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.DateCalendarCellType.ExtenderCssClass">
+            <summary>
+            Gets or sets the CSS class for displaying the date calendar.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.DateCalendarCellType.DateFormat">
+            <summary>
+            Gets or sets the date format for the date calendar.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.DateCalendarCellType.EnableOnClient">
+            <summary>
+            Gets or sets whether to enable the calendar on the client side.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.DateCalendarCellType.Animated">
+            <summary>
+            Gets or sets whether to animate the calendar.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.DateCalendarCellType.FirstDayOfWeek">
+            <summary>
+            Gets or sets the first day of the week in the calendar.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.DateCalendarCellType.PopupButtonID">
+            <summary>
+            Gets or sets the pop-up button identifier.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.DateCalendarCellType.PopupPosition">
+            <summary>
+            Gets or sets the position of the pop-up calendar.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.DateCalendarCellType.SelectedDate">
+            <summary>
+            Gets or sets the selected date of the calendar.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.DateCalendarCellType.OnClientShowing">
+            <summary>
+            Gets or sets the client-side showing event data.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.DateCalendarCellType.OnClientShown">
+            <summary>
+            Gets or sets the client-side shown event data.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.DateCalendarCellType.OnClientHiding">
+            <summary>
+            Gets or sets the client-side hiding event data.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.DateCalendarCellType.OnClientHidden">
+            <summary>
+            Gets or sets the client-side hidden event data.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.DateCalendarCellType.OnClientDateSelectionChanged">
+            <summary>
+            Gets or sets the client-side dateSelectionChanged event data.
+            </summary>
+        </member>
+        <member name="T:FarPoint.Web.Spread.Extender.FilteredTextCellType">
+            <summary>
+            Represents an ASP.NET AJAX extender filtered text cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.FilteredTextCellType.#ctor">
+            <summary>
+            Creates a new ASP.NET AJAX extender filtered text cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.FilteredTextCellType.FilterType">
+            <summary>
+            Gets or sets the type of filter for the filtered text cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.FilteredTextCellType.FilterMode">
+            <summary>
+            Gets or sets the filter mode for the filtered text cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.FilteredTextCellType.ValidChars">
+            <summary>
+            Gets or sets a string containing all the valid characters for the text field.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.FilteredTextCellType.InvalidChars">
+            <summary>
+            Gets or sets a string containing all the invalid characters for the text field.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.FilteredTextCellType.FilterInterval">
+            <summary>
+            Gets or sets the filter interval, in milliseconds, in which 
+            the field's contents are filtered.
+            </summary>
+        </member>
+        <member name="T:FarPoint.Web.Spread.Extender.MaskedEditCellType">
+            <summary>
+            Represents an ASP.NET AJAX extender masked edit cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.MaskedEditCellType.#ctor">
+            <summary>
+            Creates a new ASP.NET AJAX extender masked edit cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.MaskedEditCellType.GetEditorControl(System.String,System.Web.UI.WebControls.TableCell,FarPoint.Web.Spread.Appearance,FarPoint.Web.Spread.Inset,System.Object,System.Boolean)">
+            <summary>
+            Gets the control used to edit the masked cell.
+            </summary>
+            <param name="id">Unique identifier of the control</param>
+            <param name="parent">Parent cell (TableCell object) of the control</param>
+            <param name="style">Style settings (Appearance object) for the control</param>
+            <param name="margin">Margin settings (Inset object) for the control</param>
+            <param name="value">Value (as object) to put in the control</param>
+            <param name="upperLevel">Whether the control can render in an up-level browser</param>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.Mask">
+            <summary>
+            Gets or set the mask.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.ClipboardText">
+            <summary>
+            Gets or sets the text explaining Clipboard operations for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.MaskType">
+            <summary>
+            Gets or sets the type of mask.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.MessageValidatorTip">
+            <summary>
+            Gets or sets the tip for the message validator for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.ErrorTooltipEnabled">
+            <summary>
+            Gets or sets whether to enable the error ToolTip for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.ErrorTooltipCssClass">
+            <summary>
+            Gets or sets the CSS class that defines the style for the error ToolTip for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.ClipboardEnabled">
+            <summary>
+            Gets or sets whether to enable Clipboard operations for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.AutoComplete">
+            <summary>
+            Gets or sets whether to provide automatic completion for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.ClearTextOnInvalid">
+            <summary>
+            Gets or sets whether to clear the text when input is invalid for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.AutoCompleteValue">
+            <summary>
+            Gets or sets the automatic completion value for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.Filtered">
+            <summary>
+            Gets or sets the filtered string for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.InputDirection">
+            <summary>
+            Gets or sets the input direction of editing in the masked input.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.PromptCharacter">
+            <summary>
+            Gets or sets the prompt character of the mask input.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.OnFocusCssClass">
+            <summary>
+            Gets or sets the focus CSS class event data.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.OnInvalidCssClass">
+            <summary>
+            Gets or sets the invalid CSS class event data.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.UserDateFormat">
+            <summary>
+            Gets or sets the date fomat for the mask input.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.UserTimeFormat">
+            <summary>
+            Gets or sets the time format for the mask input.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.ClearMaskOnLostFocus">
+            <summary>
+            Gets or sets whether to clear the mask when focus is moved.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.CultureName">
+            <summary>
+            Gets or sets the name of the culture (for culture-specific values) for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.CultureDatePlaceholder">
+            <summary>
+            Gets or sets the culture-specific date placeholder for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.CultureTimePlaceholder">
+            <summary>
+            Gets or sets the culture-specific time placeholder for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.CultureDecimalPlaceholder">
+            <summary>
+            Gets or sets the culture-specific decimal placeholder for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.CultureThousandsPlaceholder">
+            <summary>
+            Gets or sets the culture-specific thousands placeholder for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.CultureDateFormat">
+            <summary>
+            Gets or sets the culture-specific date format for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.CultureCurrencySymbolPlaceholder">
+            <summary>
+            Gets or sets the culture-specific currency symbol placeholder for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.CultureAMPMPlaceholder">
+            <summary>
+            Gets or sets the culture-specific AM and PM placeholder for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.AcceptAMPM">
+            <summary>
+            Gets or sets whether to accept AM and PM for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.AcceptNegative">
+            <summary>
+            Gets or sets the accept negative symbol for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.OnFocusCssNegative">
+            <summary>
+            Gets or sets the focus CSS negative event data.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.OnBlurCssNegative">
+            <summary>
+            Gets or sets the blur CSS negative event data.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.DisplayMoney">
+            <summary>
+            Gets or sets the display money symbol for the mask cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditCellType.Century">
+            <summary>
+            Gets or sets the number of the century for the mask cell.
+            </summary>
+        </member>
+        <member name="T:FarPoint.Web.Spread.Extender.MutuallyExclusiveCheckBoxCellType">
+            <summary>
+            Represents an ASP.NET AJAX extender mutually exclusive check box cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.MutuallyExclusiveCheckBoxCellType.#ctor">
+            <summary>
+            Creates a new ASP.NET AJAX extender mutually exclusive check box cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.MutuallyExclusiveCheckBoxCellType.#ctor(System.String)">
+            <summary>
+            Creates a new ASP.NET AJAX extender mutually exclusive check box cell.
+            </summary>
+            <param name="key">The key to associate mutually exclusive check boxes.</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.MutuallyExclusiveCheckBoxCellType.GetEditorControl(System.String,System.Web.UI.WebControls.TableCell,FarPoint.Web.Spread.Appearance,FarPoint.Web.Spread.Inset,System.Object,System.Boolean)">
+            <summary>
+            Gets the control used to edit the mutually exclusive check box cell.
+            </summary>
+            <param name="id">Unique identifier of the control</param>
+            <param name="parent">Parent cell (TableCell object) of the control</param>
+            <param name="style">Style settings (Appearance object) for the control</param>
+            <param name="margin">Margin settings (Inset object) for the control</param>
+            <param name="value">Value (as object) to put in the control</param>
+            <param name="upperLevel">Whether the control can render in an up-level browser</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.MutuallyExclusiveCheckBoxCellType.SerializeEditor(System.Xml.XmlTextWriter)">
+            <summary>
+            Saves the editor to XML.
+            </summary>
+            <param name="w">XmlTextWriter object used to save the object</param>
+            <returns>true if successful; false otherwise</returns>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.MutuallyExclusiveCheckBoxCellType.DeserializeEditor(System.Xml.XmlNodeReader)">
+            <summary>
+            Loads the editor from XML.
+            </summary>
+            <param name="r">XmlNodeReader from which to read the object</param>
+            <returns>true if successful; false otherwise</returns>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.MutuallyExclusiveCheckBoxCellType.GetEditorValue(System.Web.UI.Control,System.String)">
+            <summary>
+            Gets the value from the editing control used for the mutually exclusive check box cell.
+            </summary>
+            <param name="owner">Spread component that owns this editor control</param>
+            <param name="id">Unique identifier used by the Spread component to identify this editor control</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.MutuallyExclusiveCheckBoxCellType.Parse(System.String)">
+            <summary>
+            When deriving a cell type based on this type, override this
+            to change what gets parsed from the cell on the sheet and put in the data model.
+            </summary>
+            <param name="s">String from the cell on the sheet to parse</param>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MutuallyExclusiveCheckBoxCellType.ShowEditor">
+            <summary>
+            Gets whether to display the editor for the mutually exclusive check box cell.
+            </summary>
+            <value>true to display the editor; otherwise, false.</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MutuallyExclusiveCheckBoxCellType.Editor">
+            <summary>
+            Gets or sets the editor (editing control) for the mutually exclusive check box cell.
+            </summary>
+            <value>Editor (editing control)</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MutuallyExclusiveCheckBoxCellType.Key">
+            <summary>
+            Gets or sets the key to associate mutually exclusive check boxes.
+            </summary>
+            <remarks>
+            This property determines the unique key to use to associate checkboxes.
+            This key does not respect INamingContainer renaming.    
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MutuallyExclusiveCheckBoxCellType.Text">
+            <summary>
+            Gets or sets the text of the mutually exclusive check box.
+            </summary>
+        </member>
+        <member name="T:FarPoint.Web.Spread.Extender.NumericUpDownCellType">
+            <summary>
+            Represents an ASP.NET AJAX extender numeric up-down cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.NumericUpDownCellType.#ctor">
+            <summary>
+            Creates a new ASP.NET AJAX extender numeric up-down cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.NumericUpDownCellType.Format(System.Object)">
+            <summary>
+            Format the object to a string.
+            </summary>
+            <param name="o">Object to be formatted.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.NumericUpDownCellType.Parse(System.String)">
+            <summary>
+            Parse the string to return a double value.
+            </summary>
+            <param name="s">String from the cell on the sheet to parse</param>
+            <returns></returns>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.NumericUpDownCellType.TargetButtonUpID">
+            <summary>
+            Gets or sets the identifier for the target Up button.
+            It take effects when ShowEditor is true
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.NumericUpDownCellType.TargetButtonDownID">
+            <summary>
+            Gets or sets the identifier for the target Down button.
+            It take effects when ShowEditor is true
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.NumericUpDownCellType.ServiceUpPath">
+            <summary>
+            Gets or sets the path to the helper Web service for the Up button.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.NumericUpDownCellType.ServiceUpMethod">
+            <summary>
+            Gets or sets the method to the helper Web service for the Up button.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.NumericUpDownCellType.ServiceDownPath">
+            <summary>
+            Gets or sets the path to the helper Web service for the Down button.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.NumericUpDownCellType.ServiceDownMethod">
+            <summary>
+            Gets or sets the method to the helper Web service for the Down button.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.NumericUpDownCellType.Step">
+            <summary>
+            Gets or sets the step used for simple numeric incrementing and decrementing.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.NumericUpDownCellType.Minimum">
+            <summary>
+            Gets or sets the minimum value for the numeric up-down cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.NumericUpDownCellType.Maximum">
+            <summary>
+            Gets or sets the maximum value for the numeric up-down cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.NumericUpDownCellType.RefValues">
+            <summary>
+            Gets or sets a list of reference values for the numeric up-down cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.NumericUpDownCellType.Width">
+            <summary>
+            Gets or sets the width of the numeric up-down cell.
+            </summary>
+            <remarks>
+            This property determines the width which includes both the text box width and button width. 
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.NumericUpDownCellType.Tag">
+            <summary>
+            Gets or sets the custom parameter for calling the Web service method
+            of the numeric up-down cell.
+            </summary>
+        </member>
+        <member name="T:FarPoint.Web.Spread.Extender.PasswordStrengthCellType">
+            <summary>
+            Represents an ASP.NET AJAX extender password strength cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.#ctor">
+            <summary>
+            Creates a new ASP.NET AJAX extender password strength cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.PreferredPasswordLength">
+            <summary>
+            Gets or sets the ideal length of the password.
+            </summary>
+            <remarks>
+            This property determines the preferred or ideal length of the password. 
+            Passwords could be less than this amount but do not reach the 100-percent 
+            calculation if less than this count. This is used to calculate 50-percent
+            of the percentage strength of the password. Ideally, a password should be 
+            20 characters in length to be a strong password.
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.MinimumNumericCharacters">
+            <summary>
+            Gets or sets the minimum number of numeric characters required for the password.
+            </summary>
+            <remarks>
+            This property determines the minimum number of numeric characters required. 
+            If there are less than this property, then the password is not considered strong. 
+            If there are equal to or more than this value, then this contributes 15-percent
+            to the overall password strength.
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.HelpHandleCssClass">
+            <summary>
+            Gets or sets the CSS class used to display help for the password requirements. 
+            </summary>
+            <remarks>
+            This property determines the CSS class used to display the image for showing the 
+            password requirements to meet. This is provided so that the user can click on 
+            this image and get a display on what is required to make the password strong 
+            according to the current properties.
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.HelpHandlePosition">
+            <summary>
+            Gets or sets the position of where the help handle is displayed for the password.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.HelpStatusLabelID">
+            <summary>
+            Gets or sets the identifier of the help status label for the password.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.MinimumSymbolCharacters">
+            <summary>
+            Gets or sets the minimum number of symbol characters for a password to be considered strong.
+            </summary>
+            <remarks>
+            This property determines the minimum number of symbol characters (e.g. ^,*, percent symbol, etc.) 
+            required for the password to be considered strong. If there are less than this property, 
+            then the password is not considered strong. If there are equal to or more than this value, 
+            then this will contribute 15-percent to the overall password strength.
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.RequiresUpperAndLowerCaseCharacters">
+            <summary>
+            Gets or sets whether mixed case letters are required for a password to be considered strong.
+            </summary>
+            <remarks>
+            This property determines if mixed case passwords are required to be considered strong. 
+            If true, then there must be at least one occurrence of mixed case (upper and lower) letters 
+            in the password to be considered strong. If there is, this will contribute 20-percent to the
+            overall password strength percentage value.
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.TextCssClass">
+            <summary>
+            Gets or sets the CSS class to apply to the text of the editing control for a password.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.BarBorderCssClass">
+            <summary>
+            Gets or sets the CSS class to apply to the bar border for a password.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.BarIndicatorCssClass">
+            <summary>
+            Gets or sets the CSS class to apply to the bar indicator for a password.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.PrefixText">
+            <summary>
+            Gets or sets the text prefixed to the password strength display value 
+            when using text display mode.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.DisplayPosition">
+            <summary>
+            Gets or sets the display position for a password.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.StrengthIndicatorType">
+            <summary>
+            Gets or sets the type of password strength indicator.
+            </summary>
+            <remarks>
+            This property determines the visual display of the password strength.
+            It is either a bar (as in a progress bar indicating percentage strength) or
+            text (as in low, medium, high, or excellent).
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.CalculationWeightings">
+            <summary>
+            Gets or sets the calculation weightings of the password strength.
+            </summary>
+            <remarks>
+            This property determines the calculation ratios or "weightings" 
+            used when calculating a passwords strength.
+            The value must be a string with four elements separated by a semi-colons.
+            The total of all four elements must equal one hundred percent.
+            Default is "50;15;15;20" which represents
+            ... Password Length Requirements : 50-percent
+            ... Numerics Requirements        : 15-percent
+            ... Casing Requirements          : 15-percent
+            ... Symbol Character Requirements: 20-percent
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.TextStrengthDescriptions">
+            <summary>
+            Gets or sets the text strength descriptions for a password.
+            </summary>
+            <remarks>
+            This property determines a string that specifies the string descriptions, 
+            delimited by semi-colons, for the password strength when using a textual display.
+            An example of a string would be "None;Weak;Medium;Strong;Excellent"
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.StrengthStyles">
+            <summary>
+            Gets or sets the styles of the text strength descriptions for a password.
+            </summary>
+            <remarks>
+            This property determines a string, delimited by semi-colons, that specifies 
+            the styles applicable to each string description for the password strength 
+            when using a textual display.
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.MinimumLowerCaseCharacters">
+            <summary>
+            Gets or sets the minimum number of lower case characters for a password to be considered strong.
+            </summary>
+            <remarks>
+            If the <see cref="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.RequiresUpperAndLowerCaseCharacters"/> property is true, then this property determines the
+            minimum lower case characters that are required. The default value is 0 which means this property is not
+            in effect and there is no minimum limit.
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.MinimumUpperCaseCharacters">
+            <summary>
+            Gets or sets the minimum number of upper case characters for a password to be considered strong.
+            </summary>
+            <remarks>
+            If the <see cref="P:FarPoint.Web.Spread.Extender.PasswordStrengthCellType.RequiresUpperAndLowerCaseCharacters"/> property is true, then this property determines the
+            minimum upper case characters that are required. The default value is 0 which means this property is not
+            in effect and there is no minimum limit.
+            </remarks>
+        </member>
+        <member name="T:FarPoint.Web.Spread.Extender.RatingCellType">
+            <summary>
+            Represents an ASP.NET AJAX extender rating cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.RatingCellType.#ctor">
+            <summary>
+            Creates a new ASP.NET AJAX extender rating cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.RatingCellType.GetEditorControl(System.String,System.Web.UI.WebControls.TableCell,FarPoint.Web.Spread.Appearance,FarPoint.Web.Spread.Inset,System.Object,System.Boolean)">
+            <summary>
+            Gets the control used to edit the cell for the rating.
+            </summary>
+            <param name="id">Unique identifier of the control</param>
+            <param name="parent">Parent cell (TableCell object) of the control</param>
+            <param name="style">Style settings (Appearance object) for the control</param>
+            <param name="margin">Margin settings (Inset object) for the control</param>
+            <param name="value">Value (as object) to put in the control</param>
+            <param name="upperLevel">Whether the control can render in an up-level browser</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.RatingCellType.GetEditorValue(System.Web.UI.Control,System.String)">
+            <summary>
+            Gets the value from the editing control for the rating.
+            </summary>
+            <param name="owner">Spread component that owns this editor control</param>
+            <param name="id">Unique identifier used by the Spread component to identify this editor control</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.RatingCellType.ValidateEditorValue(System.Object)">
+            <summary>
+            Validates the given value of the rating.
+            </summary>
+            <param name="value">Value to be validated</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.RatingCellType.Parse(System.String)">
+            <summary>
+            When deriving a cell type based on this type, override this
+            to change what gets parsed from the cell on the sheet and put in the data model.
+            </summary>
+            <param name="s">String from the cell on the sheet to parse</param>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.RatingCellType.ShowEditor">
+            <summary>
+            Gets whether to display the editor for the rating.
+            </summary>
+            <value>true to display the editor; otherwise, false.</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.RatingCellType.Editor">
+            <summary>
+            Gets or sets the editor (editing control) for the rating.
+            </summary>
+            <value>Editor (editing control)</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.RatingCellType.CurrentRating">
+            <summary>
+            Gets or sets the current rating.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.RatingCellType.MaxRating">
+            <summary>
+            Gets or sets the maximum rating.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.RatingCellType.ReadOnly">
+            <summary>
+            Gets or sets whether the value is read-only (cannot be changed).
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.RatingCellType.Tag">
+            <summary>
+            Gets or sets the tag.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.RatingCellType.StarCssClass">
+            <summary>
+            Gets or sets the CSS class that defines the style of the default rating star.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.RatingCellType.FilledStarCssClass">
+            <summary>
+            Gets or sets the CSS class that defines the style of the filled rating star.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.RatingCellType.EmptyStarCssClass">
+            <summary>
+            Gets or sets the CSS class that defines the style of the empty rating star.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.RatingCellType.WaitingStarCssClass">
+            <summary>
+            Gets or sets the CSS class that defines the style of the waiting rating star.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.RatingCellType.RatingAlign">
+            <summary>
+            Gets or sets the orientation of the rating stars.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.RatingCellType.RatingDirection">
+            <summary>
+            Gets or sets the direction of the rating stars.
+            </summary>
+        </member>
+        <member name="T:FarPoint.Web.Spread.Extender.RatingCellType.RatingJsonConverter">
+            <summary>
+            Internal use only. For serializing the rating control.
+            </summary>
+        </member>
+        <member name="T:FarPoint.Web.Spread.Extender.SliderCellType">
+            <summary>
+            Represents an ASP.NET AJAX extender slider cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.SliderCellType.#ctor">
+            <summary>
+            Creates a new ASP.NET AJAX extender slider cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.SliderCellType.GetEditorControl(System.String,System.Web.UI.WebControls.TableCell,FarPoint.Web.Spread.Appearance,FarPoint.Web.Spread.Inset,System.Object,System.Boolean)">
+            <summary>
+            Gets the control used to edit the cell.
+            </summary>
+            <param name="id">Unique identifier of the control</param>
+            <param name="parent">Parent cell (TableCell object) of the control</param>
+            <param name="style">Style settings (Appearance object) for the control</param>
+            <param name="margin">Margin settings (Inset object) for the control</param>
+            <param name="value">Value (as object) to put in the control</param>
+            <param name="upperLevel">Whether the control can render in an up-level browser</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.SliderCellType.Format(System.Object)">
+            <summary>
+            Format the object to return a string.
+            </summary>
+            <param name="o">Object to be formatted.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.SliderCellType.Parse(System.String)">
+            <summary>
+            Parse the string to return a double value.
+            </summary>
+            <param name="s">String from the cell on the sheet to parse</param>
+            <returns></returns>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SliderCellType.Minimum">
+            <summary>
+            Gets or sets the minimum value available for input for the slider cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SliderCellType.Maximum">
+            <summary>
+            Gets or sets the maximum value available for input for the slider cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SliderCellType.RailCssClass">
+            <summary>
+            Gets or sets the CSS class that defines the style for the slider rail element.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SliderCellType.HandleImageUrl">
+            <summary>
+            Gets or sets the URL for the image to display in the slider handle.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SliderCellType.HandleCssClass">
+            <summary>
+            Gets or sets the CSS class that defines the style for the handle element.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SliderCellType.EnableHandleAnimation">
+            <summary>
+            Gets or sets whether to enable the handle animation played 
+            when the user clicks on the slider rail.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SliderCellType.Steps">
+            <summary>
+            Gets or sets the number of discrete values available for input
+            for the slider cell. 
+            </summary>
+            <remarks>
+            The steps are equally spaced within the slider range of values.
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SliderCellType.Orientation">
+            <summary>
+            Gets or sets the orientation of the slider. 
+            </summary>
+            <remarks>
+            A slider can be rendered horizontally or vertically.
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SliderCellType.Decimals">
+            <summary>
+            Gets or sets the number of decimal digits in the slider value. 
+            </summary>
+            <remarks>
+            A value of 0 means an integer value.
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SliderCellType.RaiseChangeOnlyOnMouseUp">
+            <summary>
+            Gets or sets whether to raise a client-side change event only when
+            the user releases the mouse button.
+            </summary>
+            <remarks>
+            This property allows the control to raise a client-side change event on the
+            extended text box. This is useful for example to trigger an UpdatePanel's update
+            when the slider value changes.
+            If set to true, the change event is raised only when the user releases the 
+            left mouse button on the slider. 
+            If set to false, the change event is raised whenever the slider value changes.
+            This property is set to true by default to prevent flooding of requests to 
+            the Web server.
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SliderCellType.TooltipText">
+            <summary>
+            Gets or sets the text to display in the ToolTip for the slider cell.
+            </summary>
+            <remarks>
+            This property allows you to specify some text to display in the tooltip
+            of the slider handle. If the text contains the {0} placeholder, it is 
+            replaced by the current value of the slider.
+            </remarks>
+        </member>
+        <member name="T:FarPoint.Web.Spread.Extender.SlideShowCellType">
+            <summary>
+            Represents an ASP.NET AJAX extender slide show cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.SlideShowCellType.#ctor">
+            <summary>
+            Creates a new ASP.NET AJAX extender slide show cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.SlideShowCellType.GetEditorControl(System.String,System.Web.UI.WebControls.TableCell,FarPoint.Web.Spread.Appearance,FarPoint.Web.Spread.Inset,System.Object,System.Boolean)">
+            <summary>
+            Gets the control used to edit the cell.
+            </summary>
+            <param name="id">Unique identifier of the control</param>
+            <param name="parent">Parent cell (TableCell object) of the control</param>
+            <param name="style">Style settings (Appearance object) for the control</param>
+            <param name="margin">Margin settings (Inset object) for the control</param>
+            <param name="value">Value (as object) to put in the control</param>
+            <param name="upperLevel">Whether the control can render in an up-level browser</param>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SlideShowCellType.ShowEditor">
+            <summary>
+            Gets whether to display the editor.
+            </summary>
+            <value>true if show editor mode is on; otherwise, false.</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SlideShowCellType.Editor">
+            <summary>
+            Gets or sets the editor (editing control).
+            </summary>
+            <value>Editor (editing control)</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SlideShowCellType.SlideShowServiceMethod">
+            <summary>
+            Gets or sets the Web service method that is called to supply images
+            for the slide show cell. 
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SlideShowCellType.SlideShowServicePath">
+            <summary>
+            Gets or sets the path to the Web service from which the extender pulls the images
+            for the slide show cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SlideShowCellType.ContextKey">
+            <summary>
+            Gets or sets the user- or page-specific context key for the slide show cell.
+            </summary>
+            This property determines the user/page specific context provided 
+            to an optional overload of the Web method described by the Service Method 
+            and ServicePath. If the context key is used, it should have the same signature 
+            with an additional parameter named contextKey of type string.
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SlideShowCellType.UseContextKey">
+            <summary>
+            Gets or sets whether the context key should be used for the slide show cell.
+            </summary>
+            <remarks>
+            This property determines whether the ContextKey property should be used.  
+            This is automatically enabled if the ContextKey property is ever set
+            (on either the client or the server). If the context key is used, it 
+            should have the same signature with an additional parameter 
+            named contextKey of type string.
+            </remarks>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SlideShowCellType.NextButtonID">
+            <summary>
+            Gets or sets the identifier of the control that moves the slide show
+            to the next slide.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SlideShowCellType.PlayButtonID">
+            <summary>
+            Gets or sets the identifier of the control that plays the slide show.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SlideShowCellType.PlayButtonText">
+            <summary>
+            Gets or sets the text to display in the play button if the slide show is not playing.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SlideShowCellType.StopButtonText">
+            <summary>
+            Gets or sets the text to display in the play button if the slide show is in play mode.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SlideShowCellType.PlayInterval">
+            <summary>
+            Gets or sets the interval in milliseconds before switching to the next slide.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SlideShowCellType.ImageTitleLabelID">
+            <summary>
+            Gets or sets the identifier of the label that displays the current slide title.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SlideShowCellType.ImageDescriptionLabelID">
+            <summary>
+            Gets or sets the identifier of the label that displays the current slide description.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SlideShowCellType.PreviousButtonID">
+            <summary>
+            Gets or sets the identifier of the control that moves the slide show 
+            to the previous slide.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SlideShowCellType.Loop">
+            <summary>
+            Gets or sets whether the slide show loops around at either the first or last slide.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.SlideShowCellType.AutoPlay">
+            <summary>
+            Gets or sets whether the slide show plays automatically on render.
+            </summary>
+        </member>
+        <member name="T:FarPoint.Web.Spread.Extender.TextBoxWatermarkCellType">
+            <summary>
+            Represents an ASP.NET AJAX extender text box watermark cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.TextBoxWatermarkCellType.#ctor">
+            <summary>
+            Creates a new ASP.NET AJAX extender text box watermark cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.TextBoxWatermarkCellType.#ctor(System.String)">
+            <summary>
+            Creates a new ASP.NET AJAX extender text box watermark cell.
+            </summary>
+            <param name="watermark">The text to place in the control when watermarked.</param>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.TextBoxWatermarkCellType.ShowEditor">
+            <summary>
+            Gets whether to display the editor.
+            </summary>
+            <value>true if show editor mode is on; otherwise, false.</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.TextBoxWatermarkCellType.WatermarkText">
+            <summary>
+            Gets or sets the text to place in the control when watermarked.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.TextBoxWatermarkCellType.WatermarkCssClass">
+            <summary>
+            Gets or sets the CSS class to apply to the control when watermarked.
+            </summary>
+        </member>
+        <member name="T:FarPoint.Web.Spread.Extender.AjaxCellTypeBase">
+            <summary>
+            Represents the basis for other ASP.NET AJAX extender cell types 
+            using a text box as the editing control.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxCellTypeBase.GetEditorControl(System.String,System.Web.UI.WebControls.TableCell,FarPoint.Web.Spread.Appearance,FarPoint.Web.Spread.Inset,System.Object,System.Boolean)">
+            <summary>
+            Gets the control used to edit the cell.
+            </summary>
+            <param name="id">Unique identifier of the control</param>
+            <param name="parent">Parent cell (TableCell object) of the control</param>
+            <param name="style">Style settings (Appearance object) for the control</param>
+            <param name="margin">Margin settings (Inset object) for the control</param>
+            <param name="value">Value (as object) to put in the control</param>
+            <param name="upperLevel">Whether the control can render in an up-level browser</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.FpComboBox.DataBind">
+            <summary>
+            Binds a data source to the invoked server control and all its child controls.
+            </summary>
+        </member>
+        <member name="T:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType">
+            <summary>
+            Represents an ASP.NET AJAX extender combo box cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.#ctor">
+            <summary>
+            Creates a new ASP.NET AJAX extender numeric up-down cell.
+            </summary>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.SerializeExtenders(System.Xml.XmlTextWriter)">
+            <summary>
+            Saves the Extenders to XML.
+            </summary>
+            <param name="w">XmlTextWriter object used to save the object</param>
+            <returns>true if successful; false otherwise</returns>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.DeserializeExtenders(System.Xml.XmlNodeReader)">
+            <summary>
+            Loads the Extenders from XML.
+            </summary>
+            <param name="r">XmlNodeReader from which to read the object</param>
+            <returns>true if successful; false otherwise</returns>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.Clone">
+            <summary>
+            Creates a new copy of the cell type.
+            </summary>
+            <returns>New copy of the cell type</returns>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.GetEditorControl(System.String,System.Web.UI.WebControls.TableCell,FarPoint.Web.Spread.Appearance,FarPoint.Web.Spread.Inset,System.Object,System.Boolean)">
+            <summary>
+            Gets the control used to edit the cell.
+            </summary>
+            <param name="id">Unique identifier of the control</param>
+            <param name="parent">Parent cell (TableCell object) of the control</param>
+            <param name="style">Style settings (Appearance object) for the control</param>
+            <param name="margin">Margin settings (Inset object) for the control</param>
+            <param name="value">Value (as object) to put in the control</param>
+            <param name="upperLevel">Whether the control can render in an up-level browser</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.PaintCell(System.String,System.Web.UI.WebControls.TableCell,FarPoint.Web.Spread.Appearance,FarPoint.Web.Spread.Inset,System.Object,System.Boolean)">
+            <summary>
+            Gets a control and renders it in the cell based on the specified appearance, margin, and value.
+            </summary>
+            <param name="id">Unique identifier of the control</param>
+            <param name="parent">Parent cell (TableCell object) for the control</param>
+            <param name="style">Style settings (Appearance object) for the control</param>
+            <param name="margin">Margin settings (Inset object) for the control</param>
+            <param name="value">Value (as object) to put in the control</param>
+            <param name="upperLevel">Whether to render to a up-level browser</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.Format(System.Object)">
+            <summary>
+            When deriving a cell type based on this type, override this  
+            to change what gets passed back and formatted as a string 
+            into the cell on the sheet from the object in the data model. 
+            </summary>
+            <param name="o">Object in the data model from which to get formatting information</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.Parse(System.String)">
+            <summary>
+            When deriving a cell type based on this type, override this  
+            to change what gets parsed from the cell on the sheet and put in the data model.
+            </summary>
+            <param name="s">String from the cell on the sheet to parse</param>
+        </member>
+        <member name="M:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.GetEditorValue(System.Web.UI.Control,System.String)">
+            <summary>
+            Gets the value from the editing control used for the cell.
+            </summary>
+            <param name="owner">Spread component that owns this editing control</param>
+            <param name="id">Unique identifier used by the Spread component to identify this editing control</param>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.Editor">
+            <summary>
+            Gets or sets the text box editing control.
+            </summary>
+            <value>Text box editing control</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.BackColor">
+            <summary>
+            Gets or sets the background color of the cell.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.AutoPostBack">
+            <summary>
+            Gets or sets whether the control should automatically post back when clicked.
+            This property only has an effect when the ShowEditor property is true.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.DropDownStyle">
+            <summary>
+            Gets or sets the drop down style of the combo box.
+            Whether the combo box requires typed text to match an item in the list or allows new items to be created.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.AutoCompleteMode">
+            <summary>
+            Gets or sets the auto complete mode of the combo box.
+            Whether the combo box auto-completes by suggesting an item in the list while typing or appending matches as the user types.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.CaseSensitive">
+            <summary>
+            Gets or sets a value that indicates whether the combo box auto-complete is case sensitive while the user is typing.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.ItemInsertLocation">
+            <summary>
+            Gets or sets the insert location when inserting an item in the ComboBox list.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.Items">
+            <summary>
+            Gets the collection of items in the list control.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.DataSource">
+            <summary>
+            Gets or sets the object from which the data-bound control retrieves its list
+            of data items.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.DataSourceID">
+            <summary>
+            Gets or sets the ID of the control from which the data-bound control retrieves
+            its list of data items.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.DataMember">
+            <summary>
+            Gets or sets the name of the list of data that the data-bound control binds
+            to, in cases where the data source contains more than one distinct list of
+            data items.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.DataTextField">
+            <summary>
+            Gets or sets the data source field that provides the text content
+            of the list items.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.AjaxComboBoxCellType.DataValueField">
+            <summary>
+            Gets or sets the data source field that provides the value of each
+            list item.
+            </summary>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditValidator.ID">
+            <summary>
+            Gets or sets the programmatic identifier assigned to the server control.
+            </summary>
+            <value>The programmatic identifier assigned to the control.</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditValidator.ControlToValidate">
+            <summary>
+            Gets or sets id of the input control to validate.
+            </summary>
+            <value> 
+            The id of input control to validate. The default value is System.String.Empty,
+            which indicates that this property is not set.
+            </value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditValidator.ControlExtender">
+            <summary>
+            Gets or sets the ID of the MaskedEditExtender attached to the TextBox.
+            </summary>
+            <value>the ID of MaskedEditExtender attached to the TextBox.</value>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:FarPoint.Web.Spread.Extender.MaskedEditValidator.Display" -->
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditValidator.ClientValidationFunction">
+            <summary>
+            Gets or sets the client script validation function used for custom validation.
+            </summary>
+            <value>The client validation function.</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditValidator.EmptyValueMessage">
+            <summary>
+            Gets or sets the empty  message that displayed when empty and TextBox has focus.
+            </summary>
+            <value>The empty value message.</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditValidator.ErrorMessage">
+            <summary>
+            Gets or sets the error message.
+            </summary>
+            <value>The error message.</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditValidator.InitialValue">
+            <summary>
+            Gets or sets the initial value.
+            </summary>
+            <value>The initial value.</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditValidator.InvalidValueMessage">
+            <summary>
+            Gets or sets the message displayed when invalid and TextBox has focus.
+            </summary>
+            <value>The invalid value message.</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditValidator.IsValidEmpty">
+            <summary>
+            Gets or sets a value indicating whether to validate the empty value.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is valid empty; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditValidator.MaximumValue">
+            <summary>
+            Gets or sets the maximum value.
+            </summary>
+            <value>The maximum value.</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditValidator.MaximumValueMessage">
+            <summary>
+            Gets or sets the message displayed when maximum value exceeded and TextBox has focus.
+            </summary>
+            <value>The maximum value message.</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditValidator.MinimumValue">
+            <summary>
+            Gets or sets the minimum value.
+            </summary>
+            <value>The minimum value.</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditValidator.MinimumValueMessage">
+            <summary>
+            Gets or sets the message displayed when minimum value exceeded and TextBox has focus.
+            </summary>
+            <value>The minimum value message.</value>
+        </member>
+        <member name="P:FarPoint.Web.Spread.Extender.MaskedEditValidator.ValidationExpression">
+            <summary>
+            Gets or sets the Regular expression used to validate the input.
+            </summary>
+            <value>The validation expression.</value>
+        </member>
+    </members>
+</doc>
