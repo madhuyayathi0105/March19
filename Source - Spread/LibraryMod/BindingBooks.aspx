@@ -305,6 +305,7 @@
                                     <asp:ListItem>Access Number</asp:ListItem>
                                 </asp:DropDownList>
                                 <asp:TextBox ID="txtsearch" Visible="false" runat="server" Style="margin-left: -4px;
+                                    <asp:TextBox ID="txtsearch" Visible="false" runat="server" Style="margin-left: -4px;
                                     width: 150px;" CssClass="textbox txtheight2"></asp:TextBox>
                                 <asp:ImageButton ID="btnselectbooks" runat="server" ImageUrl="~/LibImages/GoWhite.jpg"
                                     Style="margin-left: 22px;" OnClick="btnselectbooks_click" />
